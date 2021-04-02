@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="item"
+            type="c.theprakhar.flexnest.models.User"/>
+        <variable
+            name="itemClick"
+            type="c.theprakhar.flexnest.ItemClickListener"/>
+    </data>
+    <LinearLayout
+        android:id="@+id/storylinear"
+        android:orientation="vertical"
+        android:onClick="@{() ->itemClick.onStoryClick(item)}"
+        android:paddingTop="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                bind:avatar="@{item.avatar}"
+                android:id="@+id/dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:ellipsize="end"
+                android:maxWidth="80dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:paddingBottom="10dp"
+                android:layout_gravity="center_horizontal"
+                android:text="@{item.first_name}"
+
+                 android:id="@+id/name"
+                />
+        </LinearLayout>
+
+</layout>
